@@ -685,8 +685,8 @@ function inv_renderInvoiceHTML(inv) {
     <div style="min-width:220px;max-width:260px">
       ${inv.usePpn ? `
       <div style="display:flex;justify-content:space-between;padding:4px 8px;font-size:10px;background:#f9fafb;border-bottom:1px solid #eee"><span>DPP NILAI LAIN</span><span style="white-space:nowrap;font-family:monospace">${fmtRpInv(inv.dpp||0)}</span></div>
-      <div style="display:flex;justify-content:space-between;padding:4px 8px;font-size:10px;background:#f9fafb;border-bottom:1px solid #eee"><span>PPN </span></div>
-      <div style="display:flex;justify-content:space-between;padding:4px 8px;font-size:10px;background:#f9fafb;border-bottom:1px solid #eee"><span>PPH </span></div>` : ''}
+      <div style="display:flex;justify-content:space-between;padding:4px 8px;font-size:10px;background:#f9fafb;border-bottom:1px solid #eee"><span>PPN</span><span style="white-space:nowrap;font-family:monospace">${fmtRpInv(inv.ppn||0)} </span></div>
+      <div style="display:flex;justify-content:space-between;padding:4px 8px;font-size:10px;background:#f9fafb;border-bottom:1px solid #eee"><span>PPH</span><span style="white-space:nowrap;font-family:monospace">${fmtRpInv(inv.pph||0) </span></div>` : ''}
       <div style="display:flex;justify-content:space-between;padding:6px 8px;font-size:11px;font-weight:800;background:#FFC000;color:#111"><span>GRAND TOTAL</span><span style="white-space:nowrap;font-family:monospace">${fmtRpInv(inv.grandTotal||0)}</span></div>
       ${inv.termin!=='PELUNASAN'&&inv.dpAmt ? `<div style="display:flex;justify-content:space-between;padding:4px 8px;font-size:10px;background:#fffbf0;color:#7a5a00;font-weight:600;border-bottom:1px solid #eee"><span>${esc(inv.termin||'DP')}</span><span style="white-space:nowrap;font-family:monospace">${fmtRpInv(inv.dpAmt||0)}</span></div>` : ''}
       ${inv.termin==='PELUNASAN'&&inv.useSudah&&inv.sudahAmt ? `
